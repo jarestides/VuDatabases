@@ -20,6 +20,7 @@ Create Table Users (
 	password VARCHAR(25),
 	email VARCHAR (25),
     	univ_id INT, 
+	user_type INT,
 	Primary Key (user_id, univ_id),
 	Foreign Key (univ_id) References UnivProfile (univ_id) ON DELETE CASCADE)
 	ENGINE=InnoDB;
