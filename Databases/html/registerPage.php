@@ -97,6 +97,11 @@
                     <span id="repPassValidate"></span>
                     <input class="input" type="text" placeholder="Email" name="email" id="email" required />
                     <span id="emailValidate"></span>
+                    <select name="univ_id" id="univ_id">
+                        <option value="1">University of Central Florida</option>
+                        <option value="2">University of South Florida</option>
+                        <option value="3">University of Florida</option>
+                    </select>
                     <button class="login-form-btn" type="submit" name="submit">Sign Up</button>
                     <div style = "font-size: 20px">
                         <a href="loginPage.php">Return to Login</a>
