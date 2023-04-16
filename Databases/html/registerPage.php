@@ -19,8 +19,8 @@
         var lastName = document.getElementById("lname").value;
         var lnameError = document.getElementById("lnameValidate");
 
-        var username = document.getElementById("username").value;
-        var userError = document.getElementById("usernameValidate");
+        var user_id = document.getElementById("user_id").value;
+        var userError = document.getElementById("user_idValidate");
 
         var password = document.getElementById("password").value;
         var passError = document.getElementById("passwordValidate");
@@ -50,8 +50,8 @@
             lnameError.style.color = "red";
             return false;
         }
-        if (username.length > 20) {
-            userError.textContent = "Username must be under 20 characters";
+        if (user_id.length > 20) {
+            userError.textContent = "user_id must be under 20 characters";
             userError.style.color = "red";
             return false;
         }
@@ -87,8 +87,8 @@
                     <span id="fnameValidate"></span>
                     <input class="input" type="text" placeholder="Last Name" name="lname" id="lname" required />
                     <span id="lnameValidate"></span>
-                    <input class="input" type="text" placeholder="Username" name="username" id="username" required />
-                    <span id="usernameValidate"></span>
+                    <input class="input" type="text" placeholder="User ID" name="user_id" id="user_id" required />
+                    <span id="user_idValidate"></span>
                     <input class="input" type="password" placeholder="Password" name="password" id="password"
                         required />
                     <span id="passwordValidate"></span>
