@@ -44,7 +44,7 @@
           <form class="login-form validate-form" method="post" action="">
             <span class="login-form-title"> <b>Create RSO</b></span>
             <input class="input" type="text" name="Name" id="Name" placeholder="Name" />
-            <input class="input" type="text" name="Description" id="Description" placeholder="Description" />
+            <input class="input" type="text" name="Description" id="Description" placeholder="Description" style = "height: 100px;" />
             <button class="login-form-btn" type="submit" name="submit">
               Create
             </button>
