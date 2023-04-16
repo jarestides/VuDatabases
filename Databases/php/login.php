@@ -13,9 +13,9 @@ if(isset($_POST['submit'])){
 
         $conn = mysqli_connect("localhost", "root", "");
         
-        $db = mysqli_select_db($conn, "accessform");
+        $db = mysqli_select_db($conn, "vutabase");
 
-        $query = mysqli_query($conn, "SELECT * FROM form WHERE password='$password' AND username='$username'");
+        $query = mysqli_query($conn, "SELECT * FROM users WHERE password='$password' AND username='$username'");
 
         $rows = mysqli_num_rows($query);
 
