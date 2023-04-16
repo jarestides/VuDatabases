@@ -15,11 +15,11 @@ Create Table SuperAdmin (
 
 Create Table Users (
 	user_id INT,
-    fname VARCHAR(25),
-    lname VARCHAR(25),
+   	fname VARCHAR(25),
+    	lname VARCHAR(25),
 	password VARCHAR(25),
 	email VARCHAR (25),
-    univ_id INT, 
+    	univ_id INT, 
 	Primary Key (user_id, univ_id),
 	Foreign Key (univ_id) References UnivProfile (univ_id) ON DELETE CASCADE)
 	ENGINE=InnoDB;
@@ -34,9 +34,9 @@ Create Table RSO (
 Create Table Events (
 	Event_id INT,
 	Name VARCHAR(100),
-    Type VARCHAR(25),
-    Start_date VARCHAR(25),
-    End_date VARCHAR(25),
-    Description	TEXT,
-    Primary Key(Event_id))
-    ENGINE=InnoDB;
+    	Type VARCHAR(25),
+   	Start_date VARCHAR(25),
+    	End_date VARCHAR(25),
+    	Description	TEXT,
+    	Primary Key(Event_id))
+    	ENGINE=InnoDB;
