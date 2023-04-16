@@ -3,7 +3,7 @@
 $invalid='';
 
 if(isset($_POST['submit'])){
-    if(empty($_POST['Name']) || empty($_POST['Description'])){
+    if(empty($_POST['name']) || empty($_POST['description'])){
         $invalid ="Must fill the areas completely";
     }
     else
@@ -11,10 +11,10 @@ if(isset($_POST['submit'])){
         $conn = mysqli_connect("localhost", "root", "");
         $db = mysqli_select_db($conn, "vutabase");
 
-        $Name=$_POST['Name'];
-        $Description=$_POST['Description'];
+        $name=$_POST['name'];
+        $description=$_POST['description'];
 
-        $register_query = "INSERT INTO `rso` (`Name`, `Description`) VALUES ('$Name', '$Description')";
+        $register_query = "INSERT INTO `rso` (`name`, `description`) VALUES ('$name', '$description')";
 
     try{
         $register_result = mysqli_query($conn, $register_query);
