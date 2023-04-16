@@ -45,7 +45,7 @@
             <a class="login-form-btn" style="text-decoration:none" href="RSO.php">Go to RSO</a>
             <a class="login-form-btn" style="text-decoration:none" href="Events.php">Go to Events</a>
           <div class="login-form-create">
-            <a href="loginPage.php">Go Back</a>
+            <a href="loginPage.php">Logout</a>
           </div>
             <span><?php echo $invalid; ?></span>
           </form>
