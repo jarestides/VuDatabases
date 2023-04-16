@@ -39,11 +39,11 @@
   <div class="limiter">
     <div class="container-login">
       <div class="title">
-        <h1>Events</h1>
+        <h1>COP4710 Events</h1>
         <div class="wrap-login">
           <form class="login-form validate-form" method="post" action="">
             <span class="login-form-title"> <b>Create RSO</b></span>
-            <input class="input" type="text" name="Name" id="Name" placeholder="Name" />
+            <input class="input" type="text" name="name" id="name" placeholder="name" />
             <input class="input" type="text" name="Description" id="Description" placeholder="Description" style = "height: 100px;" />
             <button class="login-form-btn" type="submit" name="submit">
               Create

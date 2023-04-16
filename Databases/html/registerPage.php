@@ -79,7 +79,7 @@
     <div class="limiter">
         <div class="container-login">
               <div class="title">
-        <h1>Events</h1>
+        <h1>COP4710 Events</h1>
             <div class="wrap-login">
                 <form class="login-form validate-form" method="post" action="">
                     <span class="login-form-title"> <b>Register</b></span>
@@ -97,7 +97,7 @@
                     <span id="repPassValidate"></span>
                     <input class="input" type="text" placeholder="Email" name="email" id="email" required />
                     <span id="emailValidate"></span>
-                    <select name="univ_id" id="univ_id">
+                    <select name="univprofile_univ_id" id="univprofile_univ_id">
                         <option value="1">University of Central Florida</option>
                         <option value="2">University of South Florida</option>
                         <option value="3">University of Florida</option>

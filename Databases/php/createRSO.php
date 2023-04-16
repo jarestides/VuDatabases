@@ -3,7 +3,7 @@
 $invalid='';
 
 if(isset($_POST['submit'])){
-    if(empty($_POST['name']) || empty($_POST['description'])){
+    if(empty($_POST['name']) || empty($_POST['Description']) || empty($_POST['univprofile_univ_id'])){
         $invalid ="Must fill the areas completely";
     }
     else
@@ -12,9 +12,10 @@ if(isset($_POST['submit'])){
         $db = mysqli_select_db($conn, "vutabase");
 
         $name=$_POST['name'];
-        $description=$_POST['description'];
+        $Description=$_POST['Description'];
+        $univprofile_univ_id=$_POST['univprofile_univ_id'];
 
-        $register_query = "INSERT INTO `rso` (`name`, `description`) VALUES ('$name', '$description')";
+        $register_query = "INSERT INTO `rso` (`name`, `Description`, `univprofile_univ_id`) VALUES ('$name', '$Description','$univprofile_univ_id')";
 
     try{
         $register_result = mysqli_query($conn, $register_query);

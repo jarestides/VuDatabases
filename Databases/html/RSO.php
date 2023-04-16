@@ -44,7 +44,12 @@
           <form class="login-form validate-form" method="post" action="">
             <span class="login-form-title"> <b>Create RSO</b></span>
             <input class="input" type="text" name="name" id="name" placeholder="name" />
-            <input class="input" type="text" name="description" id="description" placeholder="description" style = "height: 100px;" />
+            <input class="input" type="text" name="Description" id="Description" placeholder="Description" style = "height: 100px;" />
+            <select name="univprofile_univ_id" id="univprofile_univ_id">
+                        <option value="1">University of Central Florida</option>
+                        <option value="2">University of South Florida</option>
+                        <option value="3">University of Florida</option>
+            </select>
             <button class="login-form-btn" type="submit" name="submit">
               Create
             </button>
