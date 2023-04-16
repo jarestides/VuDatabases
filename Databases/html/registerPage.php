@@ -102,6 +102,11 @@
                         <option value="2">University of South Florida</option>
                         <option value="3">University of Florida</option>
                     </select>
+                    <select name="user_type" id="user_type">
+                        <option value="1">Student</option>
+                        <option value="2">Admin</option>
+                        <option value="3">Super Admin</option>
+                    </select>
                     <button class="login-form-btn" type="submit" name="submit">Sign Up</button>
                     <div style = "font-size: 20px">
                         <a href="loginPage.php">Return to Login</a>
