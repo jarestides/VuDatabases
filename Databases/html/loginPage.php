@@ -43,7 +43,7 @@
         <div class="wrap-login">
           <form class="login-form validate-form" method="post" action="">
             <span class="login-form-title"> <b>Login</b></span>
-            <input class="input" type="text" name="username" id="username" placeholder="Username" />
+            <input class="input" type="text" name="user_id" id="user_id" placeholder="User ID" />
             <input class="input" type="password" name="password" id="password" placeholder="Password" />
             <button class="login-form-btn" type="submit" name="submit">
               Login
