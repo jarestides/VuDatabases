@@ -3,7 +3,7 @@
 $invalid='';
 
 if(isset($_POST['submit'])){
-    if(empty($_POST['fname']) || empty($_POST['lname']) || empty($_POST['user_id']) || empty($_POST['password']) || empty($_POST['email']) || empty($_POST['univ_id'])){
+    if(empty($_POST['fname']) || empty($_POST['lname']) || empty($_POST['user_id']) || empty($_POST['password']) || empty($_POST['email']) || empty($_POST['univ_id']) || empty($_POST['user_type'])){
         $invalid ="Must fill the areas completely";
     }
     else
@@ -17,8 +17,9 @@ if(isset($_POST['submit'])){
         $password=$_POST['password'];
         $email=$_POST['email'];
         $univ_id=$_POST['univ_id'];
+        $user_type=$_POST['user_type'];
 
-        $register_query = "INSERT INTO `users` (`fname`, `lname`, `user_id`, `password`, `email`, `univ_id`) VALUES ('$fname', '$lname', '$user_id', '$password', '$email', '$univ_id')";
+        $register_query = "INSERT INTO `users` (`fname`, `lname`, `user_id`, `password`, `email`, `univ_id`, `user_type`) VALUES ('$fname', '$lname', '$user_id', '$password', '$email', '$univ_id', '$user_type')";
 
     try{
         $register_result = mysqli_query($conn, $register_query);
