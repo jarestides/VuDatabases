@@ -9,7 +9,7 @@ if(isset($_POST['submit'])){
     else
     {
         $conn = mysqli_connect("localhost", "root", "");
-        $db = mysqli_select_db($conn, "accessform");
+        $db = mysqli_select_db($conn, "vutabase");
 
         $fname=$_POST['fname'];
         $lname=$_POST['lname'];
@@ -17,7 +17,7 @@ if(isset($_POST['submit'])){
         $password=$_POST['password'];
         $email=$_POST['email'];
 
-        $register_query = "INSERT INTO `form` (`fname`, `lname`, `username`, `password`, `email`) VALUES ('$fname', '$lname', '$username', '$password', '$email')";
+        $register_query = "INSERT INTO `users` (`fname`, `lname`, `username`, `password`, `email`) VALUES ('$fname', '$lname', '$username', '$password', '$email')";
 
     try{
         $register_result = mysqli_query($conn, $register_query);
