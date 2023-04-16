@@ -3,19 +3,19 @@
 $invalid='';
 
 if(isset($_POST['submit'])){
-    if(empty($_POST['username']) || empty($_POST['password'])){
+    if(empty($_POST['user_id']) || empty($_POST['password'])){
         $invalid = "Incorrect";
     }
     else
     {
-        $username=$_POST['username'];
+        $user_id=$_POST['user_id'];
         $password=$_POST['password'];
 
         $conn = mysqli_connect("localhost", "root", "");
         
         $db = mysqli_select_db($conn, "vutabase");
 
-        $query = mysqli_query($conn, "SELECT * FROM users WHERE password='$password' AND username='$username'");
+        $query = mysqli_query($conn, "SELECT * FROM users WHERE password='$password' AND user_id='$user_id'");
 
         $rows = mysqli_num_rows($query);
 
