@@ -50,6 +50,7 @@
                         <option value="2">University of South Florida</option>
                         <option value="3">University of Florida</option>
             </select>
+            <input class="input" type="text" name="users_user_id" id="users_user_id" placeholder="User Id"/>
             <button class="login-form-btn" type="submit" name="submit">
               Create
             </button>

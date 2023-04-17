@@ -6,53 +6,122 @@
 <html lang="en">
 
 <head>
-  <title>Dashboard</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" type="text/css" href="../css/newLogin_style.css" />
+    <title>Dashboard</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../css/newLogin_style.css" />
 </head>
 
-<script> 
- 
-  // Check to see if login info is valid 
-  function validateRSO() { 
-    var status = "none"; 
-    var RSOError = document.getElementById("RSOError"); 
- 
-    status = "<%= request.getAttribute("status") %>"; 
-    if (status == "fail") { 
-        console.log("Testing RSO status fail"); 
- 
-        RSOError.textContent = "RSO is incorrect"; 
-        RSOError.style.color = "red"; 
-        console.log("Testing RSO error check"); 
-      return false; 
-    } 
- 
-  } 
-   
-  validateRSO(); 
- 
+<script>
+    function openPopup(popupName) {
+        document.getElementById(popupName).style.display = "block";
+    }
+
+    function closePopup(popupName) {
+        document.getElementById(popupName).style.display = "none";
+    }
+
+
+    function closeOpenPopups(e) {
+        var openpopups = document.querySelectorAll('.popup.show');
+        openpopups.forEach(function () {
+            this.classList.remove('show');
+        });
+        e.classList.add('show');
+    }
+
+    var popups = document.querySelectorAll('.popup');
+
 </script>
 
 <body>
-  <div class="limiter">
-    <div class="container-login">
-      <div class="title">
-        <h1>COP4710 Events</h1>
-        <div class="wrap-login">
-          <form class="login-form validate-form" method="post" action="">
-            <a class="login-form-btn" style="text-decoration:none" href="RSO.php">Go to RSO</a>
-            <a class="login-form-btn" style="text-decoration:none" href="Events.php">Go to Events</a>
-          <div class="login-form-create">
-            <a href="loginPage.php">Logout</a>
-          </div>
-            <span><?php echo $invalid; ?></span>
-          </form>
-        </div>
-      </div>
+<div class="form-popup" id="createUni">
+        <form action="/action_page.php" class="form-container">
+            <h1>Create University</h1>
+            <input class="input" type="text" name="name" id="name" placeholder="Name" />
+            <input class="input" type="text" name="Description" id="Description" placeholder="Description"
+                style="height: 100px;" />
+            <select name="univprofile_univ_id" id="univprofile_univ_id">
+                <option value="1">University of Central Florida</option>
+                <option value="2">University of South Florida</option>
+                <option value="3">University of Florida</option>
+            </select>
+            <button type="submit" class="btn">Create</button>
+            <button type="button" class="btn cancel" onclick="closePopup('createUni')">Close</button>
+        </form>
     </div>
-  </div>
+    <div class="form-popup" id="joinRSO">
+        <form action="/action_page.php" class="form-container">
+            <h1>Join RSO</h1>
+            <input class="input" type="text" name="name" id="name" placeholder="Name" />
+            <input class="input" type="text" name="Description" id="Description" placeholder="Description"
+                style="height: 100px;" />
+            <select name="univprofile_univ_id" id="univprofile_univ_id">
+                <option value="1">University of Central Florida</option>
+                <option value="2">University of South Florida</option>
+                <option value="3">University of Florida</option>
+            </select>
+            <button type="submit" class="btn">Create</button>
+            <button type="button" class="btn cancel" onclick="closePopup('joinRSO')">Close</button>
+        </form>
+    </div>
+    <div class="form-popup" id="createRSO">
+        <form action="/action_page.php" class="form-container">
+            <h1>Create RSO</h1>
+            <input class="input" type="text" name="name" id="name" placeholder="Name" />
+            <input class="input" type="text" name="Description" id="Description" placeholder="Description"
+                style="height: 100px;" />
+            <select name="univprofile_univ_id" id="univprofile_univ_id">
+                <option value="1">University of Central Florida</option>
+                <option value="2">University of South Florida</option>
+                <option value="3">University of Florida</option>
+            </select>
+            <button type="submit" class="btn">Create</button>
+            <button type="button" class="btn cancel" onclick="closePopup('createRSO')">Close</button>
+        </form>
+    </div>
+    <div class="form-popup" id="createEvent">
+        <form action="/action_page.php" class="form-container">
+            <h1>Create Event</h1>
+            <input class="input" type="text" name="name" id="name" placeholder="Name" />
+            <input class="input" type="text" name="Description" id="Description" placeholder="Description"
+                style="height: 100px;" />
+            <select name="univprofile_univ_id" id="univprofile_univ_id">
+                <option value="1">University of Central Florida</option>
+                <option value="2">University of South Florida</option>
+                <option value="3">University of Florida</option>
+            </select>
+            <button type="submit" class="btn">Create</button>
+            <button type="button" class="btn cancel" onclick="closePopup('createEvent')">Close</button>
+        </form>
+    </div>
+    <div class="limiter">
+        <div class="topnav">
+            <a><button class="nav-form-create" onclick="openPopup('createUni');">Create University</button></a>
+            <a><button class="nav-form-create" onclick="openPopup('joinRSO')">Join RSOs</button></a>
+            <a><button class="nav-form-create" onclick="openPopup('createRSO');">Create RSO</button></a>
+            <a><button class="nav-form-create" onclick="openPopup('createEvent');">Create Event</button></a>
+            <a href="loginPage.php">Logout</a>
+        </div>
+        <div class="container-page">
+            <div class="title">
+                <h1><b>COP4710 Project</b></h1>
+                <div class="wrap-page">
+                    <form class="login-form validate-form" method="post" action="">
+                        <select class="show-form-btn" name="univprofile_univ_id" id="univprofile_univ_id">
+                            <option value="1">University of Central Florida</option>
+                            <option value="2">University of South Florida</option>
+                            <option value="3">University of Florida</option>
+                        </select>
+                        <a class="login-form-btn" style="text-decoration:none" href="RSO.php">View Events</a>
+                        <span>
+                            <?php echo $invalid; ?>
+                        </span>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
