@@ -23,20 +23,22 @@ if(isset($_POST['submit'])){
         $Description = $_POST['Description'];
         $univprofile_univ_id=$_POST['univprofile_univ_id'];
         
-        $query = mysqli_query($conn, "INSERT INTO rso (name, Description, users_user_id, univprofile_univ_id) VALUES ('$name', '$Description', '$users_user_id', '$univprofile_univ_id')");
+        $query = mysqli_query($conn, "INSERT INTO `rso` (name, Description, users_user_id, univprofile_univ_id) VALUES ('$name', '$Description', '$users_user_id', '$univprofile_univ_id')");
 
         $rows = mysqli_num_rows($query);
         
-        $result = $query->get_result();
-        $row = $result->fetch_assoc();
-        $user_type = 2;
+//        $result = mysqli_result($query);
+//        $row = mysqli_fetch_fields($query);
+//        $user_type = 2;
 
         if($rows == 1){
-            $query2 = mysqli_query($conn, "UPDATE users SET user_type='$user_type' WHERE users_user_id='$users_user_id'");
-            returnWithInfo($row['name']);
+            //$query2 = mysqli_query($conn, "UPDATE users SET user_type='$user_type' WHERE user_id='$users_user_id'");
+            //returnWithInfo($row['name']);
+            header("Location: login-access.php");
         }else{
             echo("Invalid");
         }
+        mysqli_close($conn);
     }
 }
 
@@ -45,16 +47,16 @@ if(isset($_POST['submit'])){
 //    return json_decode(file_get_contents('php://input'), true);
 //}
 
-function returnWithInfo( $name )
-{
-    $retValue = '{"name":' . $name . '","error":""}';
-    sendResultInfoAsJson( $retValue );
-}
-
-function sendResultInfoAsJson( $obj )
-{
-    header('Content-type: application/json');
-	echo $obj;
-}
+//function returnWithInfo( $name )
+//{
+//    $retValue = '{"name":' . $name . '","error":""}';
+//    sendResultInfoAsJson( $retValue );
+//}
+//
+//function sendResultInfoAsJson( $obj )
+//{
+//    header('Content-type: application/json');
+//	echo $obj;
+//}
 
 ?>
