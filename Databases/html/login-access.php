@@ -35,7 +35,7 @@
 </script>
 
 <body>
-<div class="form-popup" id="createUni">
+    <div class="form-popup" id="createUni">
         <form action="/action_page.php" class="form-container">
             <h1>Create University</h1>
             <input class="input" type="text" name="name" id="name" placeholder="Name" />
@@ -66,7 +66,7 @@
         </form>
     </div>
     <div class="form-popup" id="createRSO">
-        <form action="/action_page.php" class="form-container">
+        <form action="" method="post" class="form-container">
             <h1>Create RSO</h1>
             <input class="input" type="text" name="name" id="name" placeholder="Name" />
             <input class="input" type="text" name="Description" id="Description" placeholder="Description"
@@ -76,7 +76,8 @@
                 <option value="2">University of South Florida</option>
                 <option value="3">University of Florida</option>
             </select>
-            <button type="submit" class="btn">Create</button>
+            <input class="input" type="text" name="users_user_id" id="users_user_id" placeholder="User Id"/>
+            <button type="submit" name="submit" class="btn">Create</button>
             <button type="button" class="btn cancel" onclick="closePopup('createRSO')">Close</button>
         </form>
     </div>
