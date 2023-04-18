@@ -1,5 +1,5 @@
 <?php
-  include '../php/createRSO.php'
+  include '../php/hostEvent.php'
 ?>
 
 <!DOCTYPE html>
@@ -43,14 +43,20 @@
         <div class="wrap-login">
           <form class="login-form validate-form" method="post" action="">
             <span class="login-form-title"> <b>Create RSO</b></span>
-            <input class="input" type="text" name="name" id="name" placeholder="name" />
-            <input class="input" type="text" name="Description" id="Description" placeholder="Description" style = "height: 100px;" />
+            <input class="input" type="text" name="name" id="name" placeholder="Name" />
+            <input class="input" type="text" name="description" id="description" placeholder="Description"
+                style="height: 100px;" />
+            <input class="input" type="text" name="category" id="category" placeholder="Category" />
+            <input class="input" type="text" name="time" id="time" placeholder="Time" />
+            <input class="input" type="text" name="date" id="date" placeholder="Date" />
+            <input class="input" type="text" name="location" id="location" placeholder="Location" />
+            <input class="input" type="text" name="phone" id="phone" placeholder="Phone Number" />
+            <input class="input" type="text" name="email" id="email" placeholder="Email Address" />
             <select name="univprofile_univ_id" id="univprofile_univ_id">
-                        <option value="1">University of Central Florida</option>
-                        <option value="2">University of South Florida</option>
-                        <option value="3">University of Florida</option>
+                <option value="1">University of Central Florida</option>
+                <option value="2">University of South Florida</option>
+                <option value="3">University of Florida</option>
             </select>
-            <input class="input" type="text" name="users_user_id" id="users_user_id" placeholder="User Id"/>
             <button class="login-form-btn" type="submit" name="submit">
               Create
             </button>
