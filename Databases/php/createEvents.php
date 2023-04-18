@@ -4,6 +4,9 @@ $invalid='';
 
 
 if(isset($_POST['submit'])){
+    
+    $user_id=$_POST['user_id'];
+    $password=$_POST['password'];
 
     $conn = new mysqli_connect("localhost", "root", "");
 

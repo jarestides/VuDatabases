@@ -16,7 +16,7 @@ if(isset($_POST['submit'])){
         
         $query = mysqli_query($conn, "INSERT INTO `rso_members` (users_user_id, rso_RSO_id) VALUES ('$users_user_id', '$rso_RSO_id')");
 
-        $rows = mysqli_num_rows($query);
+//        $rows = mysqli_num_rows($query);
         
 //        $result = mysqli_result($query);
 //        $row = mysqli_fetch_fields($query);

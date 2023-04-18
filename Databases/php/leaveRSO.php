@@ -3,7 +3,7 @@
 $invalid='';
 
 if(isset($_POST['submit'])){
-    if(empty($_POST['users_user_id']) || empty($_POST['rso_RSO_id'])){
+    if(empty($_POST['users_user_id']) || empty($_POST['rso_RSO_id']) || empty($_POST['lemons'])){
         $invalid ="Must fill the areas completely";
     }
     else
@@ -13,10 +13,11 @@ if(isset($_POST['submit'])){
         
         $users_user_id = $_POST['users_user_id'];
         $rso_RSO_id = $_POST['rso_RSO_id'];
+        $lemons = $_POST['lemons'];
         
         $query = mysqli_query($conn, "DELETE FROM rso_members WHERE users_user_id='$users_user_id' AND rso_RSO_id='$rso_RSO_id'");
 
-        $rows = mysqli_num_rows($query);
+//        $rows = mysqli_num_rows($query);
         
 //        $result = mysqli_result($query);
 //        $row = mysqli_fetch_fields($query);

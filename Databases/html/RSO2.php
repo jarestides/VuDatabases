@@ -133,7 +133,7 @@
                             <option value="2">University of South Florida</option>
                             <option value="3">University of Florida</option>
                         </select>
-                        <a class="login-form-btn2" style="text-decoration:none" href="RSO2.php">View Events</a>
+                        <a class="login-form-btn2" style="text-decoration:none" href="RSO.php">View Events</a>
                         <table   style= "margin-left: -115px" >
                             <tr>
                                 <th>Name</th>
@@ -214,6 +214,16 @@
                                 <td>MSB Bathroom</td>
                                 <td>234672341</td>
                                 <td>gmail@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <td>Pillow Fight</td>
+                                <td>Fighting with Cement Blocks</td>
+                                <td>13:00</td>
+                                <td>03/19</td>
+                                <td>Private</td>
+                                <td>Your Room</td>
+                                <td>1111111111</td>
+                                <td>yahoo@gmail.com</td>
                             </tr>
                         </table>
                         <span>

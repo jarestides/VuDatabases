@@ -105,7 +105,6 @@ CREATE TABLE IF NOT EXISTS `vutabase`.`events` (
   `date` VARCHAR(45) NOT NULL,
   `location` VARCHAR(45) NOT NULL,
   `rating` VARCHAR(45) NOT NULL,
-  `catagory` VARCHAR(45) NOT NULL,
   `univprofile_univ_id` INT NOT NULL,
   `rso_RSO_id` INT NULL,
   `users_user_id` INT NOT NULL,

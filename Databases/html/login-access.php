@@ -1,6 +1,8 @@
 <?php
     include ('../php/createRSO.php');
     include ('../php/hostEvent.php');
+    include ('../php/leaveRSO.php');
+    include ('../php/joinRSO.php');
 ?>
 
 <!DOCTYPE html>
@@ -37,33 +39,32 @@
 
 <body>
     <div class="form-popup" id="createUni">
-        <form action="/action_page.php" class="form-container">
-            <h1>Create University</h1>
-            <input class="input" type="text" name="name" id="name" placeholder="Name" />
-            <input class="input" type="text" name="Description" id="Description" placeholder="Description"
-                style="height: 100px;" />
-            <select name="univprofile_univ_id" id="univprofile_univ_id">
-                <option value="1">University of Central Florida</option>
-                <option value="2">University of South Florida</option>
-                <option value="3">University of Florida</option>
-            </select>
-            <button type="submit" class="btn">Create</button>
+        <form action="" method="post" class="form-container">
+            <h1>Leave RSO</h1>
+            <input class="input" type="text" name="users_user_id" id="users_user_id" placeholder="User ID" />
+            <input class="input" type="text" name="rso_RSO_id" id="rso_RSO_id" placeholder="RSO ID" />
+            <input class="input" type="hidden" name="lemons" id="lemons" value=lemons placeholder="lemons" />
+            <button type="submit" name="submit" class="btn">Leave</button>
             <button type="button" class="btn cancel" onclick="closePopup('createUni')">Close</button>
         </form>
     </div>
     <div class="form-popup" id="joinRSO">
-        <form action="/action_page.php" class="form-container">
+        <form action="" method="post" class="form-container">
             <h1>Join RSO</h1>
-            <input class="input" type="text" name="name" id="name" placeholder="Name" />
-            <input class="input" type="text" name="Description" id="Description" placeholder="Description"
-                style="height: 100px;" />
-            <select name="univprofile_univ_id" id="univprofile_univ_id">
-                <option value="1">University of Central Florida</option>
-                <option value="2">University of South Florida</option>
-                <option value="3">University of Florida</option>
-            </select>
-            <button type="submit" class="btn">Create</button>
+            <input class="input" type="text" name="users_user_id" id="users_user_id" placeholder="User ID" />
+            <input class="input" type="text" name="rso_RSO_id" id="rso_RSO_id" placeholder="RSO ID" />
+            <button type="submit" name="submit" class="btn">Join</button>
             <button type="button" class="btn cancel" onclick="closePopup('joinRSO')">Close</button>
+        </form>
+    </div>
+    <div class="form-popup" id="LeaveRSO">
+        <form action="" method="post" class="form-container">
+            <h1>Leave RSO</h1>
+            <input class="input" type="text" name="users_user_id" id="users_user_id" placeholder="User ID" />
+            <input class="input" type="text" name="rso_RSO_id" id="rso_RSO_id" placeholder="RSO ID" />
+            <input class="input" type="hidden" name="lemons" id="lemons" value=lemons placeholder="lemons" />
+            <button type="submit" name="submit" class="btn">Leave</button>
+            <button type="button" class="btn cancel" onclick="closePopup('LeaveRSO')">Close</button>
         </form>
     </div>
     <div class="form-popup" id="createRSO">
@@ -72,12 +73,12 @@
             <input class="input" type="text" name="name" id="name" placeholder="Name" />
             <input class="input" type="text" name="Description" id="Description" placeholder="Description"
                 style="height: 100px;" />
+            <input class="input" type="text" name="users_user_id" id="users_user_id" placeholder="User Id" />
             <select name="univprofile_univ_id" id="univprofile_univ_id">
                 <option value="1">University of Central Florida</option>
                 <option value="2">University of South Florida</option>
                 <option value="3">University of Florida</option>
             </select>
-            <input class="input" type="text" name="users_user_id" id="users_user_id" placeholder="User Id" />
             <button type="submit" name="submit" class="btn">Create</button>
             <button type="button" class="btn cancel" onclick="closePopup('createRSO')">Close</button>
         </form>
@@ -103,10 +104,21 @@
             <button type="button" class="btn cancel" onclick="closePopup('createEvent')">Close</button>
         </form>
     </div>
+    <div class="form-popup" id="showResults">
+        <form action="" class="form-container">
+            <h1>EVENTS</h1>
+            <input class="input" type="text" name="users_user_id" id="users_user_id" placeholder="User ID" />
+            <input class="input" type="text" name="rso_RSO_id" id="rso_RSO_id" placeholder="RSO ID" />
+            <input class="input" type="hidden" name="lemons" id="lemons" value=lemons placeholder="lemons" />
+            <button type="submit" name="submit" class="btn">Leave</button>
+            <button type="button" class="btn cancel" onclick="closePopup('showResults')">Close</button>
+        </form>
+    </div>
     <div class="limiter">
         <div class="topnav">
             <a><button class="nav-form-create" onclick="openPopup('createUni');">Create University</button></a>
             <a><button class="nav-form-create" onclick="openPopup('joinRSO')">Join RSOs</button></a>
+            <a><button class="nav-form-create" onclick="openPopup('LeaveRSO');">Leave RSO</button></a>
             <a><button class="nav-form-create" onclick="openPopup('createRSO');">Create RSO</button></a>
             <a><button class="nav-form-create" onclick="openPopup('createEvent');">Create Event</button></a>
             <a href="loginPage.php">Logout</a>
@@ -121,8 +133,7 @@
                             <option value="2">University of South Florida</option>
                             <option value="3">University of Florida</option>
                         </select>
-                        <a class="login-form-btn" style="text-decoration:none" href="RSO.php">View Events</a>
-                        <a class="login-form-btn" style="text-decoration:none" href="test.php">test</a>
+                        <a class="login-form-btn2" style="text-decoration:none" href="RSO.php">View Events</a>
                         <span>
                             <?php echo $invalid; ?>
                         </span>
