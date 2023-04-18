@@ -1,5 +1,6 @@
 <?php
-  include '../php/createRSO.php'
+    include ('../php/createRSO.php');
+    include ('../php/hostEvent.php');
 ?>
 
 <!DOCTYPE html>
@@ -76,23 +77,29 @@
                 <option value="2">University of South Florida</option>
                 <option value="3">University of Florida</option>
             </select>
-            <input class="input" type="text" name="users_user_id" id="users_user_id" placeholder="User Id"/>
+            <input class="input" type="text" name="users_user_id" id="users_user_id" placeholder="User Id" />
             <button type="submit" name="submit" class="btn">Create</button>
             <button type="button" class="btn cancel" onclick="closePopup('createRSO')">Close</button>
         </form>
     </div>
     <div class="form-popup" id="createEvent">
-        <form action="/action_page.php" class="form-container">
+        <form action="" method="post" class="form-container">
             <h1>Create Event</h1>
             <input class="input" type="text" name="name" id="name" placeholder="Name" />
-            <input class="input" type="text" name="Description" id="Description" placeholder="Description"
+            <input class="input" type="text" name="description" id="description" placeholder="Description"
                 style="height: 100px;" />
+            <input class="input" type="text" name="category" id="category" placeholder="Category" />
+            <input class="input" type="text" name="time" id="time" placeholder="Time" />
+            <input class="input" type="text" name="date" id="date" placeholder="Date" />
+            <input class="input" type="text" name="location" id="location" placeholder="Location" />
+            <input class="input" type="text" name="phone" id="phone" placeholder="Phone Number" />
+            <input class="input" type="text" name="email" id="email" placeholder="Email Address" />
             <select name="univprofile_univ_id" id="univprofile_univ_id">
                 <option value="1">University of Central Florida</option>
                 <option value="2">University of South Florida</option>
                 <option value="3">University of Florida</option>
             </select>
-            <button type="submit" class="btn">Create</button>
+            <button type="submit" name="submit" class="btn">Create</button>
             <button type="button" class="btn cancel" onclick="closePopup('createEvent')">Close</button>
         </form>
     </div>
@@ -115,6 +122,7 @@
                             <option value="3">University of Florida</option>
                         </select>
                         <a class="login-form-btn" style="text-decoration:none" href="RSO.php">View Events</a>
+                        <a class="login-form-btn" style="text-decoration:none" href="test.php">test</a>
                         <span>
                             <?php echo $invalid; ?>
                         </span>
